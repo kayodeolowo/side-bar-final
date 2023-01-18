@@ -21,6 +21,7 @@ export const DataProvider = (props) => {
         setFiles(res.data)
         console.log(res.data)
       });
+      
       setLoading(true);
     } catch (e) {
       console.log(e)
@@ -42,6 +43,8 @@ export const DataProvider = (props) => {
   };
 
   return (
-    <DataContext.Provider value={value}>{props.children}</DataContext.Provider>
+    <DataContext.Provider value={value}>
+      {props.children}
+    </DataContext.Provider>
   );
 };
