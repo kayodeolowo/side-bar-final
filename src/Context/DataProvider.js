@@ -1,13 +1,10 @@
 import React, { createContext, useState, useEffect } from "react";
  import axios from 'axios'
 
-
-
-
 export const DataContext = createContext();
 export const DataProvider = (props) => {
 
-  const [files, setFiles] = useState([]);
+  const [datas, setdatas] = useState([]);
   const [loading, setLoading] = useState(false)
 
    const url = `https://snapme-ng.com/api/v1/`
@@ -18,7 +15,7 @@ export const DataProvider = (props) => {
       const data = await axios 
       .get(url)
       .then(res=> {
-        setFiles(res.data)
+        setdatas(res.data)
         console.log(res.data)
       });
       
@@ -37,7 +34,7 @@ export const DataProvider = (props) => {
 
 
   const value = {
-    files: [files, setFiles],
+    datas: [datas, setdatas],
     loading: [loading, setLoading],
     
   };
