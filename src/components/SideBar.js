@@ -6,6 +6,7 @@ import {MdDarkMode} from 'react-icons/md'
 
 import { NavLink, Link } from 'react-router-dom';
 import {AiOutlinePlusCircle, AiOutlineSearch} from 'react-icons/ai'
+import ThemeToggle from './ThemeToggle';
 
 
 
@@ -33,7 +34,7 @@ const SideBar = () => {
     return (
       <header className=' lg:w-[12rem] '> 
          <div className="flex flex-col lg:h-screen  lg:ml-8 lg:mt-8   lg:px-1     
-          text-white    lg:fixed   "> 
+              lg:fixed   "> 
           
                     
                     <div className='px-2  md:px-0 ' >
@@ -69,7 +70,7 @@ const SideBar = () => {
 
         
             {/* hamburger */} 
-            <div    className=' border-2 lg:hidden fixed h-10    w-screen px-4 sm:px-6 flex flex-row-reverse  bg-white justify-between  items-center z-10 '> 
+            <div    className=' lg:hidden fixed h-14    w-screen px-4 sm:px-6 flex flex-row-reverse   justify-between  items-center z-10 '> 
 
             
             
@@ -77,26 +78,26 @@ const SideBar = () => {
                 <h1 className=' px-4 rounded-md font-semibold bg-purple-500 text-white py-[1px]'> Live </h1>
                 
                  <div>
-                    <AiOutlineSearch className='text-xl text-black'> </AiOutlineSearch>  
+                    <AiOutlineSearch className='text-xl '> </AiOutlineSearch>  
                 </div> 
 
 
 
 
                 <div className=''> 
-                    <AiOutlinePlusCircle className='text-xl text-black'> </AiOutlinePlusCircle>
+                    <AiOutlinePlusCircle className='text-xl'> </AiOutlinePlusCircle>
                  </div>
 
                 
 
                 <div className=' '> 
                     <Link to='/user'> 
-                            <img className='h-6 w-6 ' src='./image/profile.png' alt='' />  
+                            <img className='h-6 w-6 ' src='/image/profile.png' alt='' />  
                     </Link>  
                  </div>
 
                  <div> 
-              <MdDarkMode className='text-xl text-black'> </MdDarkMode>
+                <ThemeToggle/>
             </div>
 
                
@@ -104,7 +105,7 @@ const SideBar = () => {
            
           <div> 
 
-                {nav ? <AiOutlineClose onClick={handleNav}  className='text-[#000000]  text-2xl sm:text-3xl items-center  mt-1' /> :   <TbMenu2 onClick={handleNav} className='text-[#000000] text-2xl sm:text-3xl items-center mt-1 left-0  duration-50 ' />}
+                {nav ? <AiOutlineClose onClick={handleNav}  className='  text-2xl sm:text-3xl items-center  mt-1' /> :   <TbMenu2 onClick={handleNav} className=' text-2xl sm:text-3xl items-center mt-1 left-0  duration-50 ' />}
 
             </div>
 
@@ -127,10 +128,15 @@ const SideBar = () => {
                             
                             </ul>
                   </div>
+
+                  
         </div>
       </div>
             
         </div>
+
+
+        
       </header>
        
     )

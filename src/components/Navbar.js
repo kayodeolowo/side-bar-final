@@ -36,7 +36,7 @@ const Navbar = () => {
 
                 <div className='hidden lg:flex'> 
                     <Link to='/user'> 
-                            <img className='h-10 w-10' src='./image/profile.png' alt='' />  
+                            <img className='h-10 w-10' src='/image/profile.png' alt='' />  
                     </Link>  
                  </div>
 
@@ -47,6 +47,10 @@ const Navbar = () => {
                 
             </div>
          </div>
+
+          <div className='mt-20 mx-auto w-11/12  max-w-[1280px]  lg:flex flex-row  items-center'>
+          <h1> hdyeh </h1>  
+        </div>
     </header>
    
   )

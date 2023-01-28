@@ -6,6 +6,7 @@ import React, { createContext, useState, useEffect } from "react";
  import {FaRegComment} from 'react-icons/fa'
  import {TiArrowForward} from 'react-icons/ti' 
  import {TbDownload} from 'react-icons/tb'
+ import moment from 'moment';
 
 const Pindetails = () => {
 
@@ -37,32 +38,35 @@ const Pindetails = () => {
 
   return (
     <div>
-       <div className="flex lg:flex-row space-x-10 w-11/12 mx-auto lg:w-3/4 border-2 flex-col "> 
+       <div className="flex lg:flex-row rounded pt-12 lg:pt-4 lg:pb-4 lg:pl-2  lg:space-x-10 w-11/12 mx-auto lg:w-3/4  flex-col "> 
             <div> 
                  <img className="w-[20rem] rounded-xl" src={pindetails.media} alt=""/>
             </div>
 
             <div>
 
-                <div className="flex space-x-4"> 
+                <div className="flex space-x-2 mt-4"> 
                   <img className="h-6 w-6 rounded-full" src={pindetails?.user?.picture} alt="profile picture" />
                   <h1>{pindetails?.user?.username} </h1>
-                  <button className="px-3 bg-purple-600 rounded "> follow </button>
+                  <button className="px-3 bg-purple-600 text-sm rounded-xl font-semibold "> Follow+ </button>
                 </div>
-                <div>
+
+                <div className="mt-4">
                   <h1 className="font-bold text-2xl"> {pindetails.caption} </h1>
                 </div>
 
-                <div className="flex"> 
-                    <h1> {pindetails.date} </h1>
-                    <h1> {pindetails.date} </h1>
+                <div className="flex text-xs space-x-4"> 
+                   <h1 className=""> {moment(pindetails.date).format("LT")}  </h1>
+                    <h1 className=""> {moment(pindetails.date).format("Do MMM YYYY")}  </h1>
+                    
+                    
                 </div>
 
-                <div> 
+                <div className="mt-4"> 
                   <p> {pindetails.message} </p>
                 </div>
 
-                <div className="flex space-x-5">
+                <div className="flex space-x-5 mt-4">
                    <div className='items-center flex flex-col'>
                       <AiOutlineEye/>
                       <p className='text-xs'> 1.9k </p> 
@@ -95,6 +99,17 @@ const Pindetails = () => {
                     
                  
                 </div>
+
+                <div className="mt-4">
+                  <h1>  Comments </h1> 
+                  
+               </div>
+
+               <div className="flex mt-2 space-x-2">  
+                            <img className='h-6 w-6' src='/image/profile.png' alt='' /> 
+                            <input className="rounded border"/> 
+                    
+               </div> 
             </div>
 
 
